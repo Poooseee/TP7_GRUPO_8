@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace TP7_GRUOPO8
 {
@@ -15,6 +16,11 @@ namespace TP7_GRUOPO8
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lvSucursales_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
