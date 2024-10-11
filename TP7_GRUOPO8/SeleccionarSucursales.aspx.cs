@@ -13,5 +13,10 @@ namespace TP7_GRUOPO8
         {
 
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
