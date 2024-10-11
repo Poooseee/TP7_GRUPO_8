@@ -71,6 +71,15 @@
             &nbsp;</p>
         <p>
             &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:SqlDataSource ID="SqlDataSource_suc" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+        </p>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
