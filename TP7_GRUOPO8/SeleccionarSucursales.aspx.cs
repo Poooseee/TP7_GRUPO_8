@@ -11,19 +11,18 @@ namespace TP7_GRUOPO8
 {
     public partial class SeleccionarSucursales : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        public void agregarSucursalesASession(int idSucursal , string nombreSucursal , string descripcionSucursal)
+        public void agregarSucursalesASession(int idSucursal)
         {
-            DataTable dtSucursales;
-
+            DataTable dtSucursales = new DataTable();
             if (Session["SucursalesSeleccionadas"] == null)
             {
                 //SI NO EXISTE
-                dtSucursales = new DataTable();
                 dtSucursales.Columns.Add("Id_Sucursal" , typeof(int));
                 dtSucursales.Columns.Add("NombreSucursal", typeof(string));
                 dtSucursales.Columns.Add("DescripcionSucursal", typeof(string));
@@ -31,45 +30,45 @@ namespace TP7_GRUOPO8
                 //GURDAMOS
                 Session["SucursalesSeleccionadas"] = dtSucursales;
             }
-            else
+               //SI YA EXISTE
+              dtSucursales = (DataTable)Session["SucursalesSeleccionadas"];
+
+            // obtengo la informacion 
+            GestionSucursales gSucursales = new GestionSucursales();
+            DataRow nuevaFila = gSucursales.ObtenerSucursal(idSucursal);
+            string nombre = nuevaFila["NombreSucursal"].ToString();
+            string Descripcion = nuevaFila["DescripcionSucursal"].ToString();
+
+            // verifico y agrego
+            if (Repetida(dtSucursales, idSucursal) == false)
             {
-                //SI YA EXISTE
-                dtSucursales = (DataTable)Session["SucursalesSeleccionadas"];
+                dtSucursales.Rows.Add(idSucursal, nombre, Descripcion);
+               
             }
-
-            //YA EXISTE LA SUCURSAL?
-            bool isExistSucursal = dtSucursales.AsEnumerable()
-                .Any(row => Convert.ToInt32(row["Id_Sucursal"]) == idSucursal);
-
-            if (!isExistSucursal)
+            Session["SucursalesSeleccionadas"] = dtSucursales;
+        }
+        public bool Repetida(DataTable tabla, int id)
+        {
+            foreach (DataRow dr in tabla.Rows)
             {
-                //SI NO EXISTE LA SUCURSAL
-                DataRow nuevaFila = dtSucursales.NewRow();
+                if (dr["Id_Sucursal"].ToString() == id.ToString())
+                {
+                    return true;
+                }
 
-                nuevaFila["Id_Sucursal"] = idSucursal;
-                nuevaFila["NombreSucursal"] = nombreSucursal;
-                nuevaFila["DescripcionSucursal"] = descripcionSucursal;
-
-                dtSucursales.Rows.Add(nuevaFila);
-                Session["SucursalesSeleccionadas"] = dtSucursales;
+            }
+            return false;
+        }
+        protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
+        {          
+            int id = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "EventoSeleccionar")
+            {
+                agregarSucursalesASession(id);
             }
         }
 
         protected void lvSucursales_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
-        {
-            ListView listView = (ListView)sender;
-
-            if (listView.DataKeys[e.NewSelectedIndex] != null)
-            {
-                int idSucursal = Convert.ToInt32(listView.DataKeys[e.NewSelectedIndex].Value);
-                string nombreSucursal = ((Label)listView.Items[e.NewSelectedIndex].FindControl("NombreSucursalLabel")).Text;
-                string descripcionSucursal = ((Label)listView.Items[e.NewSelectedIndex].FindControl("DescripcionSucursalLabel")).Text;
-
-                agregarSucursalesASession(idSucursal, nombreSucursal, descripcionSucursal);
-            }
-        }
-
-        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

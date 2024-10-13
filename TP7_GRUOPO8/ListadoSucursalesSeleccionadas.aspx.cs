@@ -13,11 +13,11 @@ namespace TP7_GRUOPO8
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+            
             if (Session["SucursalesSeleccionadas"] != null)
             {
-                dt = (DataTable)Session["SucursalesSeleccionadas"];
-                gvSucursalesSeleccionadas.DataSource = dt;
+                
+                gvSucursalesSeleccionadas.DataSource = Session["SucursalesSeleccionadas"];
                 gvSucursalesSeleccionadas.DataBind();
             }
         }
