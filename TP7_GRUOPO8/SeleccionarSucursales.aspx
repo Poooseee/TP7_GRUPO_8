@@ -72,7 +72,7 @@
 
                 <tr>
                     <td></td>
-                <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
+                <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3" OnSelectedIndexChanging="lvSucursales_SelectedIndexChanging">
                 <EditItemTemplate>
                     <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">NombreSucursal:
                         <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />

@@ -32,7 +32,7 @@
             </table>
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <asp:GridView ID="gvSucursalesSeleccionadas" runat="server" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField HeaderText="ID_Sucursal" />
                     <asp:BoundField HeaderText="NOMBRE" />
