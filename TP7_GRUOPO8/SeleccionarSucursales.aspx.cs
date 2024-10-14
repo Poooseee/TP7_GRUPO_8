@@ -14,10 +14,13 @@ namespace TP7_GRUOPO8
        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["SucursalesSeleccionadas"] == null)
+            {
+                lblSeleccion.Text = "Aún no se ha seleccionado ninguna sucursal";
+            }
         }
 
-        public void agregarSucursalesASession(int idSucursal)
+        public bool agregarSucursalesASession(int idSucursal)
         {
             DataTable dtSucursales = new DataTable();
             if (Session["SucursalesSeleccionadas"] == null)
@@ -43,9 +46,13 @@ namespace TP7_GRUOPO8
             if (Repetida(dtSucursales, idSucursal) == false)
             {
                 dtSucursales.Rows.Add(idSucursal, nombre, Descripcion);
-               
+                Session["SucursalesSeleccionadas"] = dtSucursales;
+                return true;
             }
-            Session["SucursalesSeleccionadas"] = dtSucursales;
+            else
+            {
+                return false;
+            }
         }
         public bool Repetida(DataTable tabla, int id)
         {
@@ -59,12 +66,23 @@ namespace TP7_GRUOPO8
             }
             return false;
         }
+
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
-        {          
+        {
             int id = Convert.ToInt32(e.CommandArgument);
             if (e.CommandName == "EventoSeleccionar")
             {
-                agregarSucursalesASession(id);
+                GestionSucursales gSucursales = new GestionSucursales();
+                DataRow sucursal = gSucursales.ObtenerSucursal(id);
+                string nombreSucursal = sucursal["NombreSucursal"].ToString();
+                if (agregarSucursalesASession(id))
+                {
+                    lblSeleccion.Text = "Se ha seleccionado la sucursal: " + nombreSucursal;
+                }
+                else
+                {
+                    lblSeleccion.Text = "Esta sucursal ya ha sido seleccionada";
+                }
             }
         }
 

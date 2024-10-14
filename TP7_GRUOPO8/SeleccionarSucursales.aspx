@@ -72,6 +72,8 @@
                         <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                         <asp:Button ID="btnBuscarTodas" runat="server" OnClick="btnBuscarTodas_Click" Text="Buscar TODAS " />
                     </td>
+                    <td class="auto-style12">
+                        &nbsp;</td>
                 </tr>
 
 
@@ -185,6 +187,11 @@
                         <br /></td>
                 </SelectedItemTemplate>
                  </asp:ListView>
+                        <br />
+                        <br />
+                    </td>
+                    <td class="auto-style13">
+                        <asp:Label ID="lblSeleccion" runat="server"></asp:Label>
                     </td>
                 </tr>
             </table>

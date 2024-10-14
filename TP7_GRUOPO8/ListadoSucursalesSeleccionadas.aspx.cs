@@ -19,12 +19,28 @@ namespace TP7_GRUOPO8
                 
                 gvSucursalesSeleccionadas.DataSource = Session["SucursalesSeleccionadas"];
                 gvSucursalesSeleccionadas.DataBind();
+                lblNoSeleccion.Text = "";
+            }
+            else
+            {
+                lblNoSeleccion.Text = "No se han seleccionado sucursales";
             }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (Session["SucursalesSeleccionadas"] != null)
+            {
+                lblNoSeleccion.Text = "Se han eliminado las sucursales seleccionadas";
+                Session["SucursalesSeleccionadas"] = null;
+                gvSucursalesSeleccionadas.DataSource = Session["SucursalesSeleccionadas"];
+                gvSucursalesSeleccionadas.DataBind();
+            }
         }
     }
 }
