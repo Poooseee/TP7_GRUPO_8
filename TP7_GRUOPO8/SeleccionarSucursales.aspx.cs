@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Drawing;
 
 namespace TP7_GRUOPO8
 {
@@ -77,7 +78,9 @@ namespace TP7_GRUOPO8
                 string nombreSucursal = sucursal["NombreSucursal"].ToString();
                 if (agregarSucursalesASession(id))
                 {
-                    lblSeleccion.Text = "Se ha seleccionado la sucursal: " + nombreSucursal;
+                    lblSeleccion.Text = "Se ha seleccionado la sucursal: " + "<br>";
+                    lblLista.Text += "-"+nombreSucursal + "<br>";
+                    
                 }
                 else
                 {
@@ -111,6 +114,13 @@ namespace TP7_GRUOPO8
         {
             SqlDataSource1.SelectCommand = "SELECT[NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM[Sucursal] WHERE [NombreSucursal] LIKE '" + txtNombreDeSucursal.Text + "%'";
             txtNombreDeSucursal.Text = "";
+        }
+
+        protected void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            Button BtnSeleccionar = (Button) sender;
+            BtnSeleccionar.Text = "Seleccionado";
+            BtnSeleccionar.BackColor = Color.GreenYellow;
         }
     }
 }

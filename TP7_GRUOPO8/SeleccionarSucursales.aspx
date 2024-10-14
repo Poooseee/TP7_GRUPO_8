@@ -149,7 +149,7 @@
 
                             <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' Width="150px" />
                         
-                            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("Id_Sucursal") %>' CommandName="EventoSeleccionar" OnCommand="btnSeleccionar_Command"/>
+                            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("Id_Sucursal") %>' CommandName="EventoSeleccionar" OnCommand="btnSeleccionar_Command" OnClick="btnSeleccionar_Click"/>
                         </div>
                    </td> 
                    
@@ -192,6 +192,7 @@
                     </td>
                     <td class="auto-style13">
                         <asp:Label ID="lblSeleccion" runat="server"></asp:Label>
+                        <asp:Label ID="lblLista" runat="server"></asp:Label>
                     </td>
                 </tr>
             </table>

@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\agusp\\OneDrive\\Documentos\\GitHub\\TP7_GRUPO_8\\TP7_GRUOPO8\\",
+  "WorkspaceRootPath": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|c:\\users\\agusp\\onedrive\\documentos\\github\\tp7_grupo_8\\tp7_gruopo8\\seleccionarsucursales.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|c:\\users\\fede\\desktop\\nueva carpeta (3)\\tp7_grupo_8\\tp7_gruopo8\\seleccionarsucursales.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|solutionrelative:seleccionarsucursales.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|c:\\users\\agusp\\onedrive\\documentos\\github\\tp7_grupo_8\\tp7_gruopo8\\seleccionarsucursales.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\seleccionarsucursales.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|solutionrelative:seleccionarsucursales.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|c:\\users\\fede\\desktop\\nueva carpeta (3)\\tp7_grupo_8\\tp7_gruopo8\\listadosucursalesseleccionadas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|solutionrelative:listadosucursalesseleccionadas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|c:\\users\\fede\\desktop\\nueva carpeta (3)\\tp7_grupo_8\\tp7_gruopo8\\listadosucursalesseleccionadas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{827D0694-3614-40B3-BA7A-78DA7605F689}|TP7_GRUOPO8.csproj|solutionrelative:listadosucursalesseleccionadas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +26,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ListadoSucursalesSeleccionadas.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\ListadoSucursalesSeleccionadas.aspx.cs",
+              "RelativeDocumentMoniker": "ListadoSucursalesSeleccionadas.aspx.cs",
+              "ToolTip": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\ListadoSucursalesSeleccionadas.aspx.cs",
+              "RelativeToolTip": "ListadoSucursalesSeleccionadas.aspx.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T15:56:22.064Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "SeleccionarSucursales.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\agusp\\OneDrive\\Documentos\\GitHub\\TP7_GRUPO_8\\TP7_GRUOPO8\\SeleccionarSucursales.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\SeleccionarSucursales.aspx.cs",
               "RelativeDocumentMoniker": "SeleccionarSucursales.aspx.cs",
-              "ToolTip": "C:\\Users\\agusp\\OneDrive\\Documentos\\GitHub\\TP7_GRUPO_8\\TP7_GRUOPO8\\SeleccionarSucursales.aspx.cs",
+              "ToolTip": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\SeleccionarSucursales.aspx.cs",
               "RelativeToolTip": "SeleccionarSucursales.aspx.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwFMAAABQAAAAAAAAAA==",
+              "ViewState": "AQIAAGoAAAAAAAAAAIA3wHoAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T14:02:20.657Z",
               "EditorCaption": ""
@@ -37,13 +58,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "SeleccionarSucursales.aspx",
-              "DocumentMoniker": "C:\\Users\\agusp\\OneDrive\\Documentos\\GitHub\\TP7_GRUPO_8\\TP7_GRUOPO8\\SeleccionarSucursales.aspx",
+              "DocumentMoniker": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\SeleccionarSucursales.aspx",
               "RelativeDocumentMoniker": "SeleccionarSucursales.aspx",
-              "ToolTip": "C:\\Users\\agusp\\OneDrive\\Documentos\\GitHub\\TP7_GRUPO_8\\TP7_GRUOPO8\\SeleccionarSucursales.aspx",
+              "ToolTip": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\SeleccionarSucursales.aspx",
               "RelativeToolTip": "SeleccionarSucursales.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-10-14T14:01:29.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListadoSucursalesSeleccionadas.aspx",
+              "DocumentMoniker": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\ListadoSucursalesSeleccionadas.aspx",
+              "RelativeDocumentMoniker": "ListadoSucursalesSeleccionadas.aspx",
+              "ToolTip": "C:\\Users\\Fede\\Desktop\\Nueva carpeta (3)\\TP7_GRUPO_8\\TP7_GRUOPO8\\ListadoSucursalesSeleccionadas.aspx",
+              "RelativeToolTip": "ListadoSucursalesSeleccionadas.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-14T15:56:30.544Z",
               "EditorCaption": ""
             }
           ]
