@@ -15,5 +15,6 @@ namespace TP7_GRUOPO8
             string consulta = "Select Id_Sucursal, NombreSucursal,DescripcionSucursal FROM Sucursal WHERE Id_Sucursal = " + id;
             return datos.obtenerFila(consulta, "SucursalElegida");
         }
+
     }
 }

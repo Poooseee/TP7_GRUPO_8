@@ -38,6 +38,9 @@
         .auto-style13 {
             width: 6px;
         }
+        .auto-style14 {
+            width: 223px;
+        }
     </style>
 </head>
 <body style="height: 732px; width: 816px; margin-left: 251px;">
@@ -67,6 +70,7 @@
                     <td class="auto-style12">
                         <asp:TextBox ID="txtNombreDeSucursal" runat="server" Width="226px"></asp:TextBox>
                         <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Buscar TODAS " />
                     </td>
                 </tr>
 
@@ -77,12 +81,12 @@
                         <asp:Label ID="lblProvincias" runat="server" Text="Busqueda por provincia de sucursal:"></asp:Label>
                         <asp:DataList ID="dlProvincias" runat="server" DataSourceID="SqlDataSource2">
                             <ItemTemplate>
-                                &nbsp;<asp:Button ID="btnProvincias" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Width="200px" />
+                                &nbsp;<asp:Button ID="btnProvincias" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Width="200px" CommandArgument='<%# Eval("Id_Provincia") %>' CommandName="SeleccionarProvincias" OnCommand="btnProvincias_Command" />
                                 <br />
 <br />
                             </ItemTemplate>
                         </asp:DataList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [DescripcionProvincia],[Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
 &nbsp; </td>
                     <td class="auto-style13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3" OnSelectedIndexChanging="lvSucursales_SelectedIndexChanging">
@@ -129,22 +133,29 @@
                 </InsertItemTemplate>
                 <ItemTemplate>
                     
-                    <td runat="server" style="background-color:#DCDCDC;color: #000000;">
-                        &nbsp;<asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>'></asp:Label>
-                        <br />
-                        <asp:ImageButton ID="ImageButton1" runat="server" Height="100px" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' Width="99px" />
-                        <br />
-                        <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' Width="150px" />
-                        <br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("Id_Sucursal") %>' CommandName="EventoSeleccionar" OnCommand="btnSeleccionar_Command" />
-                        <br /></td>
+                    <td runat="server" style="background-color:#DCDCDC; color: #000000; text-align: center;">
+                        
+                        <div style="background-color: #DCDCDC; font-weight: bold; margin:0 auto;padding:0;">
+                            <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>'></asp:Label>
+                        </div>
+                        
+                        <div style="background-color: #FFFFFF; padding-bottom: 10px;margin:0 auto;">
+                            <asp:ImageButton ID="ImageButton1" runat="server" Height="100px" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' Width="99px" />
+                        </div>
+                       
+                        <div style="margin:0 auto;background-color:#DCDCDC;height:100%;">
+
+                            <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' Width="150px" />
+                        
+                            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("Id_Sucursal") %>' CommandName="EventoSeleccionar" OnCommand="btnSeleccionar_Command"/>
+                        </div>
+                   </td> 
                    
                 </ItemTemplate>
                 <LayoutTemplate>
                     <table runat="server">
                         <tr runat="server">
-                            <td runat="server">
+                            <td runat="server" class="auto-style14">
                                 <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
                                     <tr id="groupPlaceholder" runat="server">
                                     </tr>
@@ -152,7 +163,7 @@
                             </td>
                         </tr>
                         <tr runat="server">
-                            <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
+                            <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;" class="auto-style14">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
                                         <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />

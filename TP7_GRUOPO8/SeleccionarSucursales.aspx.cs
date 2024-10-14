@@ -72,5 +72,20 @@ namespace TP7_GRUOPO8
         {
 
         }
+
+        protected void btnProvincias_Command(object sender, CommandEventArgs e)
+        {
+            if(e.CommandName == "SeleccionarProvincias")
+            {
+                SqlDataSource1.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], " +
+                    "[URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] " +
+                    "where [Id_ProvinciaSucursal] ="+ e.CommandArgument.ToString();
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlDataSource1.SelectCommand = "SELECT[NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM[Sucursal]";
+        }
     }
 }

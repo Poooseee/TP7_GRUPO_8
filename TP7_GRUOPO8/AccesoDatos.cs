@@ -9,7 +9,7 @@ namespace TP7_GRUOPO8
 {
     public class AccesoDatos
     {
-        string ruta = "Data Source=DESKTOP-UJD6JDV\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
+        string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
         public DataRow obtenerFila(string consulta, string nombreFila)
         {
             SqlConnection cn = new SqlConnection(ruta);
@@ -20,6 +20,11 @@ namespace TP7_GRUOPO8
             cn.Close();
 
             return ds.Tables[nombreFila].Rows[0];
+        }
+
+        public string actualizarConsultaProvincias(int id)
+        {
+            return "select NombreSucursal,DescripcionSucursal,URL_IMAGEN_SUCURSAL where Id_Sucursal =" + id;
         }
     }
 }
