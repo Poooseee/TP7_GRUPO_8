@@ -69,8 +69,8 @@
                     <td class="auto-style8">Busqueda por nombre de sucursal:</td>
                     <td class="auto-style12">
                         <asp:TextBox ID="txtNombreDeSucursal" runat="server" Width="226px"></asp:TextBox>
-                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Buscar TODAS " />
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+                        <asp:Button ID="btnBuscarTodas" runat="server" OnClick="btnBuscarTodas_Click" Text="Buscar TODAS " />
                     </td>
                 </tr>
 

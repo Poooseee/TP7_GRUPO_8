@@ -83,9 +83,16 @@ namespace TP7_GRUOPO8
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnBuscarTodas_Click(object sender, EventArgs e)
         {
             SqlDataSource1.SelectCommand = "SELECT[NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM[Sucursal]";
+            txtNombreDeSucursal.Text = "";
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            SqlDataSource1.SelectCommand = "SELECT[NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM[Sucursal] WHERE [NombreSucursal] LIKE '" + txtNombreDeSucursal.Text + "%'";
+            txtNombreDeSucursal.Text = "";
         }
     }
 }
